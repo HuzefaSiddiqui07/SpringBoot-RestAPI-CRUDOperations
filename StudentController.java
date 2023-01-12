@@ -34,9 +34,11 @@ public class StudentController {
 		return ResponseEntity.ok().body(std);
 	 }
 	
-	@DeleteMapping("/delete/{id}")   //  http://localhost:8082/student/delete/3
-	public void deleteStudentById(@PathVariable("id") Integer id) {
+	@DeleteMapping("/delete/{id}")   //  http://localhost:8082/student/delete/4
+	public String deleteStudentById(@PathVariable("id") Integer id) {
 		studentService.deleteStudent(id);
+		String status = "Record Delete Successfully...";
+		return status;
 	}
 	
 	@GetMapping("/getstdaddress/{stdAddress}")  //  http://localhost:8082/student/getstdaddress/mumbai
